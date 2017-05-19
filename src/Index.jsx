@@ -1,4 +1,5 @@
 import React from 'react';
+import LoadingBar from './loadingBar/LoadingBar'
 
 export default class Index extends React.Component {
 	constructor() {
@@ -6,6 +7,6 @@ export default class Index extends React.Component {
 	}
 
 	render() {
-		return (<div><h1>Sema!</h1></div>);
+		return (<div><h1><LoadingBar/></h1></div>);
 	}
 }

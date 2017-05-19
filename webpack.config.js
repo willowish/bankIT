@@ -1,4 +1,3 @@
-let debug = process.env.NODE_ENV !== "production";
 let webpack = require('webpack');
 let path = require('path');
 
@@ -25,11 +24,18 @@ module.exports = {
 			{
 				test: /\.css$/,
 				loader: ['style-loader', 'css-loader?sourceMap', 'postcss-loader']
+			},
+			{
+				test: /\.scss$/,
+				use: [{
+					loader: "style-loader" // creates style nodes from JS strings
+				}, {
+					loader: "css-loader" // translates CSS into CommonJS
+				}, {
+					loader: "sass-loader" // compiles Sass to CSS
+				}]
 			}
 		]
-	},
-	plugins: {
-
 	},
 	resolve: {
 		extensions: ['.js', '.json', '.jsx']
