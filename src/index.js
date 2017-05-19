@@ -1,0 +1,1 @@
+import IndexApp from './indexApp'
