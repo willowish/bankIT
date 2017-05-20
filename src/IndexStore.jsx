@@ -20,6 +20,30 @@ class IndexStore extends EventEmitter {
 		}
 	}
 
+	getAccounts() {
+		return accounts;
+	}
+
+	getMessages() {
+		return messages;
+	}
+
+	getTransfers() {
+		return transfers;
+	}
+
+	getFirst3Transfers() {
+		return first3Transfers;
+	}
+
+	getSaldo() {
+		return saldo;
+	}
+
+	getLastBalance() {
+		return lastBalance;
+	}
+
 }
 
 let getEventsMap = () => {
@@ -65,29 +89,7 @@ let loadLastBalance = (transfers) => {
 	this.emit('lastBalanceLoaded');
 };
 
-getAccounts() {
-	return accounts;
-}
 
-getMessages() {
-	return messages;
-}
-
-getTransfers() {
-	return transfers;
-}
-
-getFirst3Transfers() {
-	return first3Transfers;
-}
-
-getSaldo() {
-	return saldo;
-}
-
-getLastBalance() {
-	return lastBalance;
-}
 const indexStore = new IndexStore();
 export default indexStore;
 
