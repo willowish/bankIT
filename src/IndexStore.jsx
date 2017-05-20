@@ -58,7 +58,7 @@ let getEventsMap = () => {
 		'saldoLoaded': loadSaldo,
 		'threeTransfersLoaded': load3Transfers,
 		'lastBalanceLoaded': loadLastBalance,
-		'loadBitcoinGraph': loadBitcoinGraph
+		'getBitcoinData': getBitcoinData
 	}
 };
 
@@ -94,7 +94,7 @@ let loadLastBalance = (transfers) => {
 	this.emit('LAST_BALANCE_LOADED');
 };
 
-let loadBitcoinGraph = (bitcoinData) =>{
+let getBitcoinData = (bitcoinData) =>{
 	this.bitcoinData= bitcoinData;
 	this.emit('BITCOIN_DATA_LOADED');
 }
