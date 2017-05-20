@@ -6,7 +6,9 @@ class IndexStore extends EventEmitter {
 		super();
 	}
 
-	
+	export function loadMessages (messages) {
+		this.emit('messagesLoaded', messages);
+	}
 
 
 
