@@ -2,8 +2,40 @@
 	position: fixed;
 	right: 0%;
 	bottom: 0%;
-	height: 500px;
+	height: 420px;
 	width: 500px;
-	border: 1px solid black;
+	border: 1px solid rgba(0, 0, 0, 0.16);
 	background: white;
+	box-shadow: -2px -2px 7px 0 rgba(0, 0, 0, 0.29);
+
+	.close-icon {
+		position: absolute;
+		right: 1%;
+		top: 1%;
+		font-size: 25px;
+		cursor: pointer;
+		transition: scale 0.3s;
+		&:hover {
+			transform: scale(1.03);
+		}
+	}
+
+	.form-container {
+		margin-top: 30px;
+		width: 100%;
+		.transfer-form {
+			padding-left: 10px;
+			padding-right: 10px;
+			width: 100%;
+			.buttons-container {
+				position: absolute;
+				right: 3%;
+
+				& > .btn {
+					margin-left: 3px;
+				}
+
+			}
+		}
+	}
 }
