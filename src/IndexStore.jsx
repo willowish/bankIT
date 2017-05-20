@@ -4,6 +4,7 @@ let eventMap = [];
 let messages = [];
 let accounts = [];
 let transfers = [];
+let bitcoinData = [];
 let first3Transfers = [];
 let saldo = 0.0;
 let lastBalance = 0.0;
@@ -44,6 +45,9 @@ class IndexStore extends EventEmitter {
 		return lastBalance;
 	}
 
+	getBitcoinData() {
+		return bitcoinData;
+	}
 }
 
 let getEventsMap = () => {
@@ -53,41 +57,47 @@ let getEventsMap = () => {
 		'transfersLoaded': loadTransfers,
 		'saldoLoaded': loadSaldo,
 		'threeTransfersLoaded': load3Transfers,
-		'lastBalanceLoaded': loadLastBalance
+		'lastBalanceLoaded': loadLastBalance,
+		'loadBitcoinGraph': loadBitcoinGraph
 	}
 };
 
 let loadMessages = (msg) => {
 	messages = msg;
-	this.emit('messagesLoaded');
+	this.emit('MESSAGES_LOADED');
 };
 
 let loadAccounts = (accountList) => {
 	accounts = accountList;
-	this.emit('accountsLoaded');
+	this.emit('ACCOUNTS_LOADED');
 };
 
 let loadTransfers = (tr) => {
 	transfers = tr;
-	this.emit('transfersLoaded');
+	this.emit('TRANSFERS_LOADED');
 };
 
 let loadSaldo = (accountList) => {
 	saldo = accountList.reduce((prev, item) => prev + item.saldo, 0);
-	this.emit('saldoLoaded');
+	this.emit('SALDO_LOADED');
 };
 
 let load3Transfers = (transfers) => {
 	first3Transfers = transfers.slice(0, 3);
-	this.emit('threeTransfersLoaded');
+	this.emit('THREE_TRANSFERS_LOADED');
 };
 
 let loadLastBalance = (transfers) => {
 	lastBalance =
 		transfers.slice(0, 3)
 			.reduce((prev, item) => prev + (item.income ? item.sum : -item.sum), 0);
-	this.emit('lastBalanceLoaded');
+	this.emit('LAST_BALANCE_LOADED');
 };
+
+let loadBitcoinGraph = (bitcoinData) =>{
+	this.bitcoinData= bitcoinData;
+	this.emit('BITCOIN_DATA_LOADED');
+}
 
 
 const indexStore = new IndexStore();

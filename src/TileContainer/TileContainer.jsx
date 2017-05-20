@@ -1,10 +1,25 @@
 import React from 'react';
 import Tile from './Tile/Tile';
-import './TileContainerStyle.scss'
+import './TileContainerStyle.scss';
+import * as IndexActions from '../IndexActions.js';
+import IndexStore from '../IndexStore.jsx';
 
 export default class TileContainer extends React.Component {
 	constructor() {
 		super();
+	}
+
+	onComponentMount() {
+		IndexStore.on('BITCOIN_DATA_LOADED', ()=>{
+			this.setState({
+				showGraph: true,
+				bitcoinData: IndexStore.getBitcoinData()
+			})
+		})
+	}
+
+	getGraphData() {
+		IndexActions.getBitcoinData();
 	}
 
 	render() {
@@ -14,6 +29,9 @@ export default class TileContainer extends React.Component {
 				<Tile title="Historia"></Tile>
 				<Tile title="Wiadomosci"></Tile>
 				<Tile title="Bilans"></Tile>
+				<Tile title="Bitcoin" onClick={this.getGraphData()}>
+					!this.state.showGraph?<Graph/>:null
+				</Tile>
 			</div>
 		);
 	}

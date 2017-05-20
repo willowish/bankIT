@@ -1,4 +1,5 @@
 import dispatcher from './dispatcher';
+import axios from 'axios';
 
 export function loadUser() {
 	let fakeUser = {
@@ -81,6 +82,25 @@ export function load3Transfers() {
 	)
 }
 
+export function getBitcoinData() {
+	axios.get('https://bitbay.net/API/Public/BTCPLN/trades.json?sort=desc')
+		.then(function (response) {
+    		console.log(response);
+  			let bitCoinData = response;
+  			dispatcher.dispatch(
+  				{
+  					type:'LOAD_BITCOIN_DATA',
+  					bitCoinData
+  				}
+  			)
+  			}
+  		)
+  		.catch(function (error) {
+    			console.log(error);
+  			}
+  		);
+}
+
 function getExampleTransfers() {
 	let exampleTransfers = [
 		{
@@ -149,7 +169,7 @@ function getExampleMessages() {
 		{
 			subject: 'Aktualizacja regulaminu',
 			body: 'Następujące punkty regulaminu ulegają zmianie z dniem...'
-		}
+		},
 		{
 			subject: 'Promocja kredytu',
 			body: 'Super specjalna oferta kredytu czeka na Ciebie. Sprawdź w ...'
