@@ -10,7 +10,7 @@ export default class Graph extends React.Component {
 	}
 
 	onComponentMount() {
-
+		IndexStore.on('BITCOIN_DATA_LOADED', this.prepareGraph());
 	}
 
 	prepareGraph() {

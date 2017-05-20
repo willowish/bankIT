@@ -30,7 +30,7 @@ export default class TileContainer extends React.Component {
 				<Tile title="Wiadomosci"></Tile>
 				<Tile title="Bilans"></Tile>
 				<Tile title="Bitcoin" onClick={this.getGraphData()}>
-					!this.state.showGraph?<Graph bitcoinData={this.state.bitcoinData}/>:null
+					!this.state.showGraph?null:<Graph bitcoinData={this.state.bitcoinData}/>
 				</Tile>
 			</div>
 		);
