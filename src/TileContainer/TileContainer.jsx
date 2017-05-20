@@ -3,10 +3,12 @@ import Tile from './Tile/Tile';
 import './TileContainerStyle.scss';
 import * as IndexActions from '../IndexActions.js';
 import IndexStore from '../IndexStore.jsx';
+import Graph from './Graph';
 
 export default class TileContainer extends React.Component {
 	constructor() {
 		super();
+		this.state={};
 	}
 
 	onComponentMount() {
@@ -29,8 +31,9 @@ export default class TileContainer extends React.Component {
 				<Tile title="Historia"></Tile>
 				<Tile title="Wiadomosci"></Tile>
 				<Tile title="Bilans"></Tile>
-				<Tile title="Bitcoin" onClick={this.getGraphData()}>
-					!this.state.showGraph?null:<Graph bitcoinData={this.state.bitcoinData}/>
+				<Tile title="Bitcoin" >
+					{!this.state
+						|| !this.state.showGraph?null:<Graph bitcoinData={this.state.bitcoinData}/>}
 				</Tile>
 			</div>
 		);

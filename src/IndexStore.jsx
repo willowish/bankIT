@@ -58,7 +58,7 @@ let getEventsMap = () => {
 		'saldoLoaded': loadSaldo,
 		'threeTransfersLoaded': load3Transfers,
 		'lastBalanceLoaded': loadLastBalance,
-		'getBitcoinData': getBitcoinData
+		'loadBitcoinData': getBitcoinData
 	}
 };
 

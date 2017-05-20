@@ -14,11 +14,10 @@ export default class Graph extends React.Component {
 	}
 
 	prepareGraph() {
-		var container = document.getElementById('graph');
+		var container = document.getElementById('graf');
   		bitcoinData.forEach(addToItems);
 	  	var dataset = new vis.DataSet(items);
 		var graph2d = new vis.Graph2d(container, dataset);
-		return graph2d;
 	}
 
 	addToItems(item, index) {
@@ -28,6 +27,6 @@ export default class Graph extends React.Component {
 	}
 
 	render() {
-		return (<div id="graph"></div>)
+		return (<div id="graf"></div>)
 	}
 }
