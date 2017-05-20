@@ -22,13 +22,13 @@ export default class Navbar extends React.Component {
 	}
 
 	setUser() {
-		this.setState(()=> {
+		this.setState(() => {
 			user: indexStore.getUser()
 		})
 	}
 
 	openConfig() {
-	//	TODO: open config
+		//	TODO: open config
 	}
 
 	render() {
@@ -39,8 +39,10 @@ export default class Navbar extends React.Component {
 					<span>Witaj, {user.name}</span>
 				</div>
 				<div class="right-panel">
-					<div class="option-item fa fa-cog" onClick={this.openConfig()}></div>
-					<div class="option-item fa fa-power-off" onClick={this.logout()}></div>
+					<div class="options-container">
+						<div class="option-item fa fa-cog" onClick={this.openConfig()}></div>
+						<div class="option-item fa fa-power-off" onClick={this.logout()}></div>
+					</div>
 				</div>
 			</div>
 		);
