@@ -6,8 +6,9 @@ $tileDefaultHeight: 250px;
 	padding: 20px;
 	margin: 5px;
 	box-shadow: 1px 1px 4px 0 rgba(0, 0, 0, 0.4);
-	transition: scale 0.2s cubic-bezier(.19,.94,.57,1.25);
+	transition: scale 0.9s cubic-bezier(.19, .94, .57, 1.25);
+
 	&:hover {
-		transform: scale(1.14);
+		transform: scale(1.007);
 	}
 }

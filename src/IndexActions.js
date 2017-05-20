@@ -63,7 +63,7 @@ export function countSaldo() {
 
 export function loadLastBalance() {
 	let transferList = getExampleTransfers();
-	dispatcher.dispatch (
+	dispatcher.dispatch(
 		{
 			type: 'LOAD_LAST_BALANCE',
 			transferList
@@ -73,7 +73,7 @@ export function loadLastBalance() {
 
 export function load3Transfers() {
 	let transferList = getExampleTransfers();
-	dispatcher.dispatch (
+	dispatcher.dispatch(
 		{
 			type: 'LOAD_3_TRANSFERS',
 			transferList
@@ -123,7 +123,7 @@ function getExampleTransfers() {
 	return exampleTransfers;
 }
 
-function getExampleAccounts () {
+function getExampleAccounts() {
 	let exampleAccounts = [
 		{
 			acc: 'Konto Oszczędnościowe',
@@ -149,7 +149,7 @@ function getExampleMessages() {
 		{
 			subject: 'Aktualizacja regulaminu',
 			body: 'Następujące punkty regulaminu ulegają zmianie z dniem...'
-		}
+		},
 		{
 			subject: 'Promocja kredytu',
 			body: 'Super specjalna oferta kredytu czeka na Ciebie. Sprawdź w ...'
