@@ -35,7 +35,7 @@ class IndexStore extends EventEmitter {
 
 	export function load3Transfers (transfers) {
 		this.first3Transfers = transfers.slice(0,3);
-		this.emit('threeTransfersUpdated');
+		this.emit('threeTransfersLoaded');
 	}
 
 	export function loadLastBalance (transfers) {
