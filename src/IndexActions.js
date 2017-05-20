@@ -14,8 +14,75 @@ export function loadUser() {
 	)
 }
 
-export function loadTransfer() {
-	let exampleTransfer = [
+export function loadTransfers() {
+	let transferList = getExampleTransfers();
+	dispatcher.dispatch(
+		{
+			type: 'LOAD_TRANSFERS',
+			transferList
+		}
+	)
+}
+
+export function loadAccounts() {
+	let accountList = getExampleAccounts();
+	dispatcher.dispatch(
+		{
+			type: 'LOAD_ACCOUNTS',
+			accountList
+		}
+	)
+}
+export function loadMessages() {
+	let messageList = getExampleMessages();
+	dispatcher.dispatch(
+		{
+			type: 'LOAD_MESSAGES',
+			messageList
+		}
+	)
+}
+
+export function performTransfer() {
+	dispatcher.dispatch(
+		{
+			type: 'PERFORM_TRANSFER'
+		}
+	)
+}
+
+export function countSaldo() {
+	let accountList = getExampleAccounts();
+	dispatcher.dispatch(
+		{
+			type: 'LOAD_SALDO',
+			accountList
+		}
+	)
+}
+
+export function loadLastBalance() {
+	let transferList = getExampleTransfers();
+	dispatcher.dispatch (
+		{
+			type: 'LOAD_LAST_BALANCE',
+			transferList
+		}
+	)
+}
+
+export function load3Transfers() {
+	let transferList = getExampleTransfers();
+	dispatcher.dispatch (
+		{
+			type: 'LOAD_3_TRANSFERS',
+			transferList
+		}
+	)
+}
+
+function getExampleTransfers() {
+	let exampleTransfers = [
 		{
 			title: 'Czynsz',
 			income: false,
@@ -53,16 +120,11 @@ export function loadTransfer() {
 			date: '2017-04-29'
 		}
 	];
-	dispatcher.dispatch(
-		{
-			type: 'LOAD_TRANSFER',
-			exampleTransfer
-		}
-	)
+	return exampleTransfers;
 }
 
-export function loadAccounts() {
-	let accountList = [
+function getExampleAccounts () {
+	let exampleAccounts = [
 		{
 			acc: 'Konto Oszczędnościowe',
 			saldo: 14086.85
@@ -76,15 +138,10 @@ export function loadAccounts() {
 			saldo: 5000.00
 		}
 	];
-	dispatcher.dispatch(
-		{
-			type: 'LOAD_ACCOUNTS',
-			accountList
-		}
-	)
+	return exampleAccounts;
 }
-export function loadMessages() {
-	let messages = [
+function getExampleMessages() {
+	let exampleMessages = [
 		{
 			subject: 'Promocja kredytu',
 			body: 'Super specjalna oferta kredytu czeka na Ciebie. Sprawdź w ...'
@@ -98,18 +155,5 @@ export function loadMessages() {
 			body: 'Super specjalna oferta kredytu czeka na Ciebie. Sprawdź w ...'
 		}
 	];
-	dispatcher.dispatch(
-		{
-			type: 'LOAD_MESSAGES',
-			messages
-		}
-	)
-}
-
-export function performTransfer() {
-	dispatcher.dispatch(
-		{
-			type: 'PERFORM_TRANSFER'
-		}
-	)
+	return exampleMessages;
 }
