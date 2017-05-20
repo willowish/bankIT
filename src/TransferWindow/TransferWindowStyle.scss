@@ -1,9 +1,9 @@
 .transfer-window-container {
-	position: absolute;
+	position: fixed;
 	right: 0%;
 	bottom: 0%;
-	height: 600px;
-	width: 400px;
+	height: 500px;
+	width: 500px;
 	border: 1px solid black;
-	background: red;
+	background: white;
 }

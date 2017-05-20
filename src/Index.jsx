@@ -3,6 +3,8 @@ import LoadingBar from './loadingBar/LoadingBar'
 import Navbar from './Navbar/Navbar';
 import TileContainer from './TileContainer/TileContainer'
 import TransferWindow from './TransferWindow/TransferWindow';
+import './IndexStyle.scss';
+
 export default class Index extends React.Component {
 	constructor() {
 		super();
@@ -10,7 +12,7 @@ export default class Index extends React.Component {
 
 	render() {
 		return (
-			<div style={{height: 100 + 'vh'}}>
+			<div class="main-container">
 				<Navbar/>
 				<TileContainer/>
 				<TransferWindow/>

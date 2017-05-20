@@ -15,7 +15,7 @@ export default class TileContainer extends React.Component {
 
 	render() {
 		return (
-			<div class="tails-container">
+			<div class="tiles-container">
 				<Tile title="Saldo"></Tile>
 				<Tile title="Historia"></Tile>
 				<Tile title="Wiadomosci"></Tile>

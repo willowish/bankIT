@@ -1,0 +1,11 @@
+html, body {
+	overflow: hidden;
+	.main-container {
+		height: 100vh;
+		overflow-y: hidden;
+	}
+	#app {
+		overflow: hidden;
+
+	}
+}
